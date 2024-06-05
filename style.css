@@ -1,0 +1,164 @@
+:root{
+    --primaryClr: green;
+    --secondaryClr: lightgreen;
+    --trClr: yellow;
+}
+body{
+    margin: 0;
+    font-size: 1.2rem;
+}
+*{
+    box-sizing: border-box;
+}
+.arbutus-regular {
+    font-family: "Arbutus", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  .flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.wrapper{
+    background: linear-gradient(var(--trClr), var(--primaryClr));
+    min-height: 100vh;
+}
+
+.calculator{
+    background: rgb(186, 186, 186);
+    width: 400px;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+    "display display display display"
+    "ac c percentage divide"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero dot equal equal"
+     ;
+
+     transform: perspective(70rem) rotateX(30deg);
+     animation: moving 2.5s;
+}
+.display{
+    background: var(--secondaryClr);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: end;
+    font-weight: bolder;
+    box-shadow: 0px 10px 5px rgba(125, 123, 123, 0.621);
+    grid-area: display;
+}
+
+.calculator .btn{
+    background: var(--trClr);
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 10px 5px rgba(125, 123, 123, 0.621);
+    border-radius: 10px;
+}
+
+.calculator .btn:hover{
+   cursor: pointer;
+   background: var(--secondaryClr);
+   transition: all 0.3s;
+}
+
+.btn-ac{
+    grid-area: ac;
+}
+
+.btn-c{
+    grid-area: c;
+}
+.btn-percentage{
+    grid-area: percentage;
+}
+.btn-divide{
+    grid-area: divide;
+}
+.btn-7{
+    grid-area: seven;
+}
+.btn-8{
+    grid-area: eight;
+}
+.btn-9{
+    grid-area: nine;
+}
+.btn-multiply{
+    grid-area: multiply;
+}
+.btn-4{
+    grid-area: four;
+}
+.btn-5{
+    grid-area: five;
+}
+.btn-6{
+    grid-area: six;
+}
+.btn-minus {
+    grid-area: minus;
+}
+.btn-1{
+    grid-area: one;
+}
+.btn-2{
+    grid-area: two;
+}
+.btn-3{
+    grid-area: three;
+}
+.btn-plus{
+    grid-area: plus;
+}
+.btn-0{
+    grid-area: zero;
+}
+.btn-dot{
+    grid-area: dot;
+}
+.btn-equal{
+    grid-area: equal;
+}
+
+.prank{
+    background: red;
+    color: white;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%{
+        transform: translateX(10px);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+
+}
+@keyframes moving {
+    0%{
+     transform: perspective(10rem) rotateX(30deg);
+    }
+    100%{
+        transform: perspective(70rem) rotateX(30deg);
+       }
+}
+
